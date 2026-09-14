@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" data-directory-viewer>
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Motion Directory Viewer</title>
+  <link rel="stylesheet" href="src/styles.css?v=20260914-5">
+  <link rel="stylesheet" href="src/directory.css?v=20260914-4">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23202936'/%3E%3Cpath d='M9 8v16l15-8z' fill='%23ffa36a'/%3E%3C/svg%3E">
+  <script type="importmap">{"imports":{"three":"./vendor/three/three.module.js"}}</script>
+</head>
+<body>
+  <header class="site-header"><a href="viewer.html" class="wordmark"><span class="logo">m</span> Motion Viewer</a><a class="header-link" href="index.html">Four-task demo ↗</a></header>
+  <main>
+    <section class="directory-intro"><p class="eyebrow">LOCAL MOTION INSPECTION</p><h1>Open a motion directory.</h1><p>Load SMPL-272 motion files and inspect them in 3D.</p></section>
+    <form id="directory-form" class="directory-form">
+      <div class="comparison-switch"><label><input id="compare-mode" type="checkbox"> Compare models</label><button id="comparison-preset" type="button">Ours vs HY 1B vs MotionMillion 3B</button></div>
+      <div class="directory-path"><label for="directory-path">Model A / results directory</label><input id="directory-path" name="directory" type="text" placeholder="/efs/jiazhishu/Results/…" spellcheck="false" autocomplete="off"></div>
+      <div class="directory-fps"><label for="directory-fps">Fallback FPS</label><input id="directory-fps" name="fps" type="number" min="0.001" max="1000" step="any" value="30" required></div>
+      <button type="submit" id="load-directory">Load / refresh</button>
+      <div class="directory-path compare-path" id="compare-path-row" hidden><label for="compare-path">Model B / comparison directory</label><input id="compare-path" type="text" placeholder="/efs/jiazhishu/Results/…" spellcheck="false" autocomplete="off"></div>
+      <div class="directory-path compare-path" id="compare-c-path-row" hidden><label for="compare-c-path">Model C / optional comparison directory</label><input id="compare-c-path" type="text" placeholder="Leave blank for a two-model comparison" spellcheck="false" autocomplete="off"></div>
+    </form>
+    <p class="directory-hint">Reads manifest.json and motion_272/*.npy, or a folder of [T, 272] .npy files. Manifest FPS takes priority.</p>
+    <p id="directory-status" role="status">Reading the initial directory…</p>
+    <details id="skipped-files" hidden><summary></summary><ul></ul></details>
+    <section id="directory-view" aria-label="Directory motion viewer"></section>
+  </main>
+  <script type="module" src="src/directory.js?v=20260914-4"></script>
+</body>
+</html>

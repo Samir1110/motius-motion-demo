@@ -1,0 +1,638 @@
+{
+  "version": 1,
+  "title": "Motion Studio",
+  "samples": [
+    {
+      "id": "t2m_human64_01",
+      "label": "Human · 01",
+      "prompt": "I want a boxing animation, starting with a sideways boxing pose with the left hand in front and the right hand behind, with a leg raised and stomping to build power, then the person punches forward, alternating left and right hand punches, I hope the body pose has a strong perspective feel and the boxing moves are exaggerated",
+      "provenance": "model-generated",
+      "sourceDataset": "t2m_human64 prompt set",
+      "reference": null,
+      "generated": "assets/t2m_human64_01_ours.json",
+      "comparison": {
+        "models": [
+          {
+            "motion": "assets/t2m_human64_01_ours.json",
+            "label": "Ours",
+            "fileName": "motion_272/000.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 42,
+            "checkpoint": "/local-ssd/ckpts/omni_1.7b_hymotion201_ieg_staged_t2m_m2t_stage2_tm2m/0020000"
+          },
+          {
+            "motion": "assets/t2m_human64_01_hy_1b.json",
+            "label": "HY 1B",
+            "fileName": "motion_272/000.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 42,
+            "checkpoint": "/local-ssd/jiazhishu/HY-Motion-1.0/ckpts/tencent/HY-Motion-1.0"
+          },
+          {
+            "motion": "assets/t2m_human64_01_motionmillion_3b.json",
+            "label": "MotionMillion 3B",
+            "fileName": "motion_272/000.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 42,
+            "checkpoint": "/local-ssd/jiazhishu/MotionMillion-Codes/checkpoints/pretrained_models/motionmillion_3B.pth"
+          }
+        ]
+      },
+      "predictedCaption": null,
+      "edit": null,
+      "structures": {},
+      "checkpoint": "Ours · stage2_tm2m / 20000",
+      "seed": 42,
+      "sourceIndex": 0,
+      "selection": "t2m_human64 browser case 1/64",
+      "generation": {
+        "weights": "ema.safetensors",
+        "mode": "direct_t2m_hymotion201",
+        "num_timesteps": 50,
+        "guidance_scale": 3.0,
+        "fps": 30.0
+      }
+    },
+    {
+      "id": "t2m_human64_07",
+      "label": "Human · 07",
+      "prompt": "The character retreats in shock and denial",
+      "provenance": "model-generated",
+      "sourceDataset": "t2m_human64 prompt set",
+      "reference": null,
+      "generated": "assets/t2m_human64_07_ours.json",
+      "comparison": {
+        "models": [
+          {
+            "motion": "assets/t2m_human64_07_ours.json",
+            "label": "Ours",
+            "fileName": "motion_272/006.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 48,
+            "checkpoint": "/local-ssd/ckpts/omni_1.7b_hymotion201_ieg_staged_t2m_m2t_stage2_tm2m/0020000"
+          },
+          {
+            "motion": "assets/t2m_human64_07_hy_1b.json",
+            "label": "HY 1B",
+            "fileName": "motion_272/006.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 48,
+            "checkpoint": "/local-ssd/jiazhishu/HY-Motion-1.0/ckpts/tencent/HY-Motion-1.0"
+          },
+          {
+            "motion": "assets/t2m_human64_07_motionmillion_3b.json",
+            "label": "MotionMillion 3B",
+            "fileName": "motion_272/006.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 48,
+            "checkpoint": "/local-ssd/jiazhishu/MotionMillion-Codes/checkpoints/pretrained_models/motionmillion_3B.pth"
+          }
+        ]
+      },
+      "predictedCaption": null,
+      "edit": null,
+      "structures": {},
+      "checkpoint": "Ours · stage2_tm2m / 20000",
+      "seed": 48,
+      "sourceIndex": 6,
+      "selection": "t2m_human64 browser case 7/64",
+      "generation": {
+        "weights": "ema.safetensors",
+        "mode": "direct_t2m_hymotion201",
+        "num_timesteps": 50,
+        "guidance_scale": 3.0,
+        "fps": 30.0
+      }
+    },
+    {
+      "id": "t2m_human64_24",
+      "label": "Human · 24",
+      "prompt": "The character squats on the ground, looks around left and right, then stands up and stretches",
+      "provenance": "model-generated",
+      "sourceDataset": "t2m_human64 prompt set",
+      "reference": null,
+      "generated": "assets/t2m_human64_24_ours.json",
+      "comparison": {
+        "models": [
+          {
+            "motion": "assets/t2m_human64_24_ours.json",
+            "label": "Ours",
+            "fileName": "motion_272/023.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 65,
+            "checkpoint": "/local-ssd/ckpts/omni_1.7b_hymotion201_ieg_staged_t2m_m2t_stage2_tm2m/0020000"
+          },
+          {
+            "motion": "assets/t2m_human64_24_hy_1b.json",
+            "label": "HY 1B",
+            "fileName": "motion_272/023.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 65,
+            "checkpoint": "/local-ssd/jiazhishu/HY-Motion-1.0/ckpts/tencent/HY-Motion-1.0"
+          },
+          {
+            "motion": "assets/t2m_human64_24_motionmillion_3b.json",
+            "label": "MotionMillion 3B",
+            "fileName": "motion_272/023.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 65,
+            "checkpoint": "/local-ssd/jiazhishu/MotionMillion-Codes/checkpoints/pretrained_models/motionmillion_3B.pth"
+          }
+        ]
+      },
+      "predictedCaption": null,
+      "edit": null,
+      "structures": {},
+      "checkpoint": "Ours · stage2_tm2m / 20000",
+      "seed": 65,
+      "sourceIndex": 23,
+      "selection": "t2m_human64 browser case 24/64",
+      "generation": {
+        "weights": "ema.safetensors",
+        "mode": "direct_t2m_hymotion201",
+        "num_timesteps": 50,
+        "guidance_scale": 3.0,
+        "fps": 30.0
+      }
+    },
+    {
+      "id": "t2m_human64_25",
+      "label": "Human · 25",
+      "prompt": "The requirement is a swordsman who starts from a combat idle pose, leaps up, then performs a gorgeous and cool sword dance, the body rotates at least three times, then gracefully lands, back to combat idle pose",
+      "provenance": "model-generated",
+      "sourceDataset": "t2m_human64 prompt set",
+      "reference": null,
+      "generated": "assets/t2m_human64_25_ours.json",
+      "comparison": {
+        "models": [
+          {
+            "motion": "assets/t2m_human64_25_ours.json",
+            "label": "Ours",
+            "fileName": "motion_272/024.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 66,
+            "checkpoint": "/local-ssd/ckpts/omni_1.7b_hymotion201_ieg_staged_t2m_m2t_stage2_tm2m/0020000"
+          },
+          {
+            "motion": "assets/t2m_human64_25_hy_1b.json",
+            "label": "HY 1B",
+            "fileName": "motion_272/024.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 66,
+            "checkpoint": "/local-ssd/jiazhishu/HY-Motion-1.0/ckpts/tencent/HY-Motion-1.0"
+          },
+          {
+            "motion": "assets/t2m_human64_25_motionmillion_3b.json",
+            "label": "MotionMillion 3B",
+            "fileName": "motion_272/024.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 66,
+            "checkpoint": "/local-ssd/jiazhishu/MotionMillion-Codes/checkpoints/pretrained_models/motionmillion_3B.pth"
+          }
+        ]
+      },
+      "predictedCaption": null,
+      "edit": null,
+      "structures": {},
+      "checkpoint": "Ours · stage2_tm2m / 20000",
+      "seed": 66,
+      "sourceIndex": 24,
+      "selection": "t2m_human64 browser case 25/64",
+      "generation": {
+        "weights": "ema.safetensors",
+        "mode": "direct_t2m_hymotion201",
+        "num_timesteps": 50,
+        "guidance_scale": 3.0,
+        "fps": 30.0
+      }
+    },
+    {
+      "id": "t2m_human64_41",
+      "label": "Human · 41",
+      "prompt": "The character pulls the bow and shoots forward twice in a row while holding the bow and finally returns to the idle standing pose",
+      "provenance": "model-generated",
+      "sourceDataset": "t2m_human64 prompt set",
+      "reference": null,
+      "generated": "assets/t2m_human64_41_ours.json",
+      "comparison": {
+        "models": [
+          {
+            "motion": "assets/t2m_human64_41_ours.json",
+            "label": "Ours",
+            "fileName": "motion_272/040.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 82,
+            "checkpoint": "/local-ssd/ckpts/omni_1.7b_hymotion201_ieg_staged_t2m_m2t_stage2_tm2m/0020000"
+          },
+          {
+            "motion": "assets/t2m_human64_41_hy_1b.json",
+            "label": "HY 1B",
+            "fileName": "motion_272/040.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 82,
+            "checkpoint": "/local-ssd/jiazhishu/HY-Motion-1.0/ckpts/tencent/HY-Motion-1.0"
+          },
+          {
+            "motion": "assets/t2m_human64_41_motionmillion_3b.json",
+            "label": "MotionMillion 3B",
+            "fileName": "motion_272/040.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 82,
+            "checkpoint": "/local-ssd/jiazhishu/MotionMillion-Codes/checkpoints/pretrained_models/motionmillion_3B.pth"
+          }
+        ]
+      },
+      "predictedCaption": null,
+      "edit": null,
+      "structures": {},
+      "checkpoint": "Ours · stage2_tm2m / 20000",
+      "seed": 82,
+      "sourceIndex": 40,
+      "selection": "t2m_human64 browser case 41/64",
+      "generation": {
+        "weights": "ema.safetensors",
+        "mode": "direct_t2m_hymotion201",
+        "num_timesteps": 50,
+        "guidance_scale": 3.0,
+        "fps": 30.0
+      }
+    },
+    {
+      "id": "t2m_human64_52",
+      "label": "Human · 52",
+      "prompt": "The character is spinning in circles",
+      "provenance": "model-generated",
+      "sourceDataset": "t2m_human64 prompt set",
+      "reference": null,
+      "generated": "assets/t2m_human64_52_ours.json",
+      "comparison": {
+        "models": [
+          {
+            "motion": "assets/t2m_human64_52_ours.json",
+            "label": "Ours",
+            "fileName": "motion_272/051.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 93,
+            "checkpoint": "/local-ssd/ckpts/omni_1.7b_hymotion201_ieg_staged_t2m_m2t_stage2_tm2m/0020000"
+          },
+          {
+            "motion": "assets/t2m_human64_52_hy_1b.json",
+            "label": "HY 1B",
+            "fileName": "motion_272/051.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 93,
+            "checkpoint": "/local-ssd/jiazhishu/HY-Motion-1.0/ckpts/tencent/HY-Motion-1.0"
+          },
+          {
+            "motion": "assets/t2m_human64_52_motionmillion_3b.json",
+            "label": "MotionMillion 3B",
+            "fileName": "motion_272/051.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 93,
+            "checkpoint": "/local-ssd/jiazhishu/MotionMillion-Codes/checkpoints/pretrained_models/motionmillion_3B.pth"
+          }
+        ]
+      },
+      "predictedCaption": null,
+      "edit": null,
+      "structures": {},
+      "checkpoint": "Ours · stage2_tm2m / 20000",
+      "seed": 93,
+      "sourceIndex": 51,
+      "selection": "t2m_human64 browser case 52/64",
+      "generation": {
+        "weights": "ema.safetensors",
+        "mode": "direct_t2m_hymotion201",
+        "num_timesteps": 50,
+        "guidance_scale": 3.0,
+        "fps": 30.0
+      }
+    },
+    {
+      "id": "t2m_short_03",
+      "label": "Short · 03",
+      "prompt": "Moving side to side while performing a dance.",
+      "provenance": "model-generated",
+      "sourceDataset": "t2m_short prompt set",
+      "reference": null,
+      "generated": "assets/t2m_short_03_ours.json",
+      "comparison": {
+        "models": [
+          {
+            "motion": "assets/t2m_short_03_ours.json",
+            "label": "Ours",
+            "fileName": "motion_272/002.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 44,
+            "checkpoint": "/local-ssd/ckpts/omni_1.7b_hymotion201_ieg_staged_t2m_m2t_stage2_tm2m/0020000"
+          },
+          {
+            "motion": "assets/t2m_short_03_hy_1b.json",
+            "label": "HY 1B",
+            "fileName": "motion_272/002.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 44,
+            "checkpoint": "/local-ssd/jiazhishu/HY-Motion-1.0/ckpts/tencent/HY-Motion-1.0"
+          },
+          {
+            "motion": "assets/t2m_short_03_motionmillion_3b.json",
+            "label": "MotionMillion 3B",
+            "fileName": "motion_272/002.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 44,
+            "checkpoint": "/local-ssd/jiazhishu/MotionMillion-Codes/checkpoints/pretrained_models/motionmillion_3B.pth"
+          }
+        ]
+      },
+      "predictedCaption": null,
+      "edit": null,
+      "structures": {},
+      "checkpoint": "Ours · stage2_tm2m / 20000",
+      "seed": 44,
+      "sourceIndex": 2,
+      "selection": "t2m_short browser case 3/64",
+      "generation": {
+        "weights": "ema.safetensors",
+        "mode": "direct_t2m_hymotion201",
+        "num_timesteps": 50,
+        "guidance_scale": 3.0,
+        "fps": 30.0
+      }
+    },
+    {
+      "id": "t2m_short_04",
+      "label": "Short · 04",
+      "prompt": "The dancer slowly spreads both arms and is gradually lifted up by a wire rig.",
+      "provenance": "model-generated",
+      "sourceDataset": "t2m_short prompt set",
+      "reference": null,
+      "generated": "assets/t2m_short_04_ours.json",
+      "comparison": {
+        "models": [
+          {
+            "motion": "assets/t2m_short_04_ours.json",
+            "label": "Ours",
+            "fileName": "motion_272/003.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 45,
+            "checkpoint": "/local-ssd/ckpts/omni_1.7b_hymotion201_ieg_staged_t2m_m2t_stage2_tm2m/0020000"
+          },
+          {
+            "motion": "assets/t2m_short_04_hy_1b.json",
+            "label": "HY 1B",
+            "fileName": "motion_272/003.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 45,
+            "checkpoint": "/local-ssd/jiazhishu/HY-Motion-1.0/ckpts/tencent/HY-Motion-1.0"
+          },
+          {
+            "motion": "assets/t2m_short_04_motionmillion_3b.json",
+            "label": "MotionMillion 3B",
+            "fileName": "motion_272/003.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 45,
+            "checkpoint": "/local-ssd/jiazhishu/MotionMillion-Codes/checkpoints/pretrained_models/motionmillion_3B.pth"
+          }
+        ]
+      },
+      "predictedCaption": null,
+      "edit": null,
+      "structures": {},
+      "checkpoint": "Ours · stage2_tm2m / 20000",
+      "seed": 45,
+      "sourceIndex": 3,
+      "selection": "t2m_short browser case 4/64",
+      "generation": {
+        "weights": "ema.safetensors",
+        "mode": "direct_t2m_hymotion201",
+        "num_timesteps": 50,
+        "guidance_scale": 3.0,
+        "fps": 30.0
+      }
+    },
+    {
+      "id": "t2m_short_05",
+      "label": "Short · 05",
+      "prompt": "The player turns around and immediately jumps forward to complete a shot.",
+      "provenance": "model-generated",
+      "sourceDataset": "t2m_short prompt set",
+      "reference": null,
+      "generated": "assets/t2m_short_05_ours.json",
+      "comparison": {
+        "models": [
+          {
+            "motion": "assets/t2m_short_05_ours.json",
+            "label": "Ours",
+            "fileName": "motion_272/004.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 46,
+            "checkpoint": "/local-ssd/ckpts/omni_1.7b_hymotion201_ieg_staged_t2m_m2t_stage2_tm2m/0020000"
+          },
+          {
+            "motion": "assets/t2m_short_05_hy_1b.json",
+            "label": "HY 1B",
+            "fileName": "motion_272/004.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 46,
+            "checkpoint": "/local-ssd/jiazhishu/HY-Motion-1.0/ckpts/tencent/HY-Motion-1.0"
+          },
+          {
+            "motion": "assets/t2m_short_05_motionmillion_3b.json",
+            "label": "MotionMillion 3B",
+            "fileName": "motion_272/004.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 46,
+            "checkpoint": "/local-ssd/jiazhishu/MotionMillion-Codes/checkpoints/pretrained_models/motionmillion_3B.pth"
+          }
+        ]
+      },
+      "predictedCaption": null,
+      "edit": null,
+      "structures": {},
+      "checkpoint": "Ours · stage2_tm2m / 20000",
+      "seed": 46,
+      "sourceIndex": 4,
+      "selection": "t2m_short browser case 5/64",
+      "generation": {
+        "weights": "ema.safetensors",
+        "mode": "direct_t2m_hymotion201",
+        "num_timesteps": 50,
+        "guidance_scale": 3.0,
+        "fps": 30.0
+      }
+    },
+    {
+      "id": "t2m_long_05",
+      "label": "Long · 05",
+      "prompt": "The character slowly squats from a standing pose, supports the ground with one hand and slowly leans backward until lying flat on the floor, then shifts slightly to find a comfortable position.",
+      "provenance": "model-generated",
+      "sourceDataset": "t2m_long prompt set",
+      "reference": null,
+      "generated": "assets/t2m_long_05_ours.json",
+      "comparison": {
+        "models": [
+          {
+            "motion": "assets/t2m_long_05_ours.json",
+            "label": "Ours",
+            "fileName": "motion_272/004.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 46,
+            "checkpoint": "/local-ssd/ckpts/omni_1.7b_hymotion201_ieg_staged_t2m_m2t_stage2_tm2m/0020000"
+          },
+          {
+            "motion": "assets/t2m_long_05_hy_1b.json",
+            "label": "HY 1B",
+            "fileName": "motion_272/004.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 46,
+            "checkpoint": "/local-ssd/jiazhishu/HY-Motion-1.0/ckpts/tencent/HY-Motion-1.0"
+          },
+          {
+            "motion": "assets/t2m_long_05_motionmillion_3b.json",
+            "label": "MotionMillion 3B",
+            "fileName": "motion_272/004.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 46,
+            "checkpoint": "/local-ssd/jiazhishu/MotionMillion-Codes/checkpoints/pretrained_models/motionmillion_3B.pth"
+          }
+        ]
+      },
+      "predictedCaption": null,
+      "edit": null,
+      "structures": {},
+      "checkpoint": "Ours · stage2_tm2m / 20000",
+      "seed": 46,
+      "sourceIndex": 4,
+      "selection": "t2m_long browser case 5/64",
+      "generation": {
+        "weights": "ema.safetensors",
+        "mode": "direct_t2m_hymotion201",
+        "num_timesteps": 50,
+        "guidance_scale": 3.0,
+        "fps": 30.0
+      }
+    },
+    {
+      "id": "M010570",
+      "label": "Spin & kick",
+      "prompt": "A person jumps and kicks out their legs while rotating 360 degrees.",
+      "provenance": "training-reference",
+      "sourceDataset": "ML3D HY-Motion-201 training set",
+      "reference": "assets/M010570.json",
+      "generated": null,
+      "predictedCaption": null,
+      "edit": null,
+      "structures": {},
+      "checkpoint": null,
+      "seed": null,
+      "thumbnail": "assets/M010570.png"
+    },
+    {
+      "id": "M009742",
+      "label": "Aerial kicks",
+      "prompt": "A person performs high spinning kicks in the air.",
+      "provenance": "training-reference",
+      "sourceDataset": "ML3D HY-Motion-201 training set",
+      "reference": "assets/M009742.json",
+      "generated": null,
+      "predictedCaption": null,
+      "edit": null,
+      "structures": {},
+      "checkpoint": null,
+      "seed": null,
+      "thumbnail": "assets/M009742.png"
+    },
+    {
+      "id": "M014144",
+      "label": "Left-leg jumps",
+      "prompt": "A person performs several jump kicks with the left leg.",
+      "provenance": "training-reference",
+      "sourceDataset": "ML3D HY-Motion-201 training set",
+      "reference": "assets/M014144.json",
+      "generated": null,
+      "predictedCaption": null,
+      "edit": null,
+      "structures": {},
+      "checkpoint": null,
+      "seed": null,
+      "thumbnail": "assets/M014144.png"
+    },
+    {
+      "id": "M014267",
+      "label": "Run & roundhouse",
+      "prompt": "A person runs back and forth while delivering roundhouse kicks.",
+      "provenance": "training-reference",
+      "sourceDataset": "ML3D HY-Motion-201 training set",
+      "reference": "assets/M014267.json",
+      "generated": null,
+      "predictedCaption": null,
+      "edit": null,
+      "structures": {},
+      "checkpoint": null,
+      "seed": null,
+      "thumbnail": "assets/M014267.png"
+    }
+  ],
+  "tasks": {
+    "t2m": [
+      "t2m_human64_01",
+      "t2m_human64_07",
+      "t2m_human64_24",
+      "t2m_human64_25",
+      "t2m_human64_41",
+      "t2m_human64_52",
+      "t2m_short_03",
+      "t2m_short_04",
+      "t2m_short_05",
+      "t2m_long_05"
+    ],
+    "m2t": [
+      "M010570",
+      "M009742",
+      "M014144",
+      "M014267"
+    ],
+    "structure": [
+      "M010570",
+      "M009742",
+      "M014144",
+      "M014267"
+    ],
+    "edit": [
+      "M010570",
+      "M009742",
+      "M014144",
+      "M014267"
+    ]
+  }
+}

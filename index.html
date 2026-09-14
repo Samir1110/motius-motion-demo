@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Motion Studio — Interactive Research Demo</title>
+  <meta name="description" content="Explore motion generation, understanding, structural completion and editing in an interactive 3D viewer with selected three-model text-to-motion comparisons.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2318202d'/%3E%3Cpath d='M6 23V9l10 10L26 9v14' fill='none' stroke='%23ff8a4c' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./src/styles.css?v=20260914-5">
+  <script type="importmap">{"imports":{"three":"./vendor/three/three.module.js"}}</script>
+</head>
+<body>
+  <header class="site-header"><a class="wordmark" href="#t2m"><span class="logo">m</span> Motion Studio</a><nav class="section-nav" aria-label="Motion tasks"><a href="#t2m">Text to Motion</a><a href="#m2t">Motion to Text</a><a href="#structure">Structure</a><a href="#edit">Edit</a></nav></header>
+  <main>
+    <section class="intro"><p class="eyebrow">LANGUAGE ↔ HUMAN MOTION</p><h1>One model. Four motion tasks.</h1><p>Explore generation, understanding, structural completion, and editing in 3D.</p></section>
+    <section class="task-section" id="t2m" aria-labelledby="t2m-heading"><div class="task-heading"><div><p class="eyebrow">01 / GENERATION</p><h2 id="t2m-heading">Text-to-Motion</h2><p>We compare our Motius (1.7B) with HY-Motion 1B and MotionMillion 3B on manually written OOD prompts.</p></div><span class="section-chip">10 precomputed comparisons</span></div><div class="studio" data-task="t2m"></div></section>
+    <section class="task-section" id="m2t" aria-labelledby="m2t-heading"><div class="task-heading"><div><p class="eyebrow">02 / UNDERSTANDING</p><h2 id="m2t-heading">Motion-to-Text</h2><p>Read the movement, describe the action.</p></div><span class="section-chip muted-chip">Reference inputs · Outputs pending</span></div><div class="studio" data-task="m2t"></div></section>
+    <section class="task-section" id="structure" aria-labelledby="structure-heading"><div class="task-heading"><div><p class="eyebrow">03 / STRUCTURAL COMPLETION</p><h2 id="structure-heading">Complete the missing motion.</h2><p>Continuation, prefix filling, in-betweening, and keyframe completion.</p></div><span class="section-chip muted-chip">Mask illustration</span></div><div class="studio" data-task="structure"></div></section>
+    <section class="task-section" id="edit" aria-labelledby="edit-heading"><div class="task-heading"><div><p class="eyebrow">04 / INSTRUCTION EDITING</p><h2 id="edit-heading">Motion Editing</h2><p>Inspect how an instruction changes a source motion.</p></div><span class="section-chip muted-chip">Reference inputs · Outputs pending</span></div><div class="studio" data-task="edit"></div></section>
+    <footer><span>Motion Studio <span class="footer-divider">/</span> Interactive research demo</span><span>Precomputed motion · Interactive 3D</span></footer>
+  </main>
+  <template id="viewer-template"><div class="case-nav"><div><span class="case-eyebrow">EXAMPLE</span><span id="case-count">01 / 08</span></div><div class="case-controls"><button id="previous-case" aria-label="Previous example">←</button><label class="sr-only" for="case-select">Choose example</label><select id="case-select"></select><button id="next-case" aria-label="Next example">→</button></div></div>      <div class="studio-body">
+        <div class="viewer-column">
+          <div class="stage-toolbar"><span id="stage-title">Reference motion</span><div class="view-buttons" aria-label="Camera presets"><button data-camera="perspective" aria-label="Perspective view" aria-pressed="true">3D</button><button data-camera="front" aria-pressed="false">Front</button><button data-camera="side" aria-pressed="false">Side</button><button id="reset-view" title="Reset camera">Reset</button></div></div>
+          <div class="stage" id="stage">
+            <canvas id="motion-canvas" aria-label="Interactive 3D human motion. Drag to orbit and scroll to zoom." tabindex="0"></canvas>
+            <div class="stage-tag" id="stage-tag">REFERENCE SAMPLE</div>
+            <div class="stage-status" id="stage-status" role="status">Loading motion…</div>
+            <div class="split-label" id="split-source" hidden>Source</div>
+            <div class="split-label" id="split-output" hidden>Edited</div>
+            <div class="split-empty" id="edit-empty" hidden><span class="empty-mark">＋</span><strong>Edited motion</strong><p>A paired model result will appear here.</p></div>
+            <div class="stage-help">Drag to orbit · Scroll to zoom</div><div class="axis-label">Y ↑ <span>METERS</span></div>
+          </div>
+          <div class="transport">
+            <div class="timeline-heading"><span id="timeline-label">Motion timeline</span><div class="legend" id="mask-legend" hidden><span class="known-dot">Known</span><span class="generated-dot">Completion region</span></div><span id="frame-label">0 / 0</span></div>
+            <div class="timeline"><div id="mask-track" aria-hidden="true"></div><input id="scrubber" type="range" min="0" max="1" value="0" step="0.001" aria-label="Playback time" disabled></div>
+            <div class="playback-row"><div class="playback-left"><button id="play" class="play-button" aria-label="Play motion" disabled>▶</button><button id="step-back" class="step-button" aria-label="Previous frame" disabled>Ⅰ‹</button><button id="step-forward" class="step-button" aria-label="Next frame" disabled>›Ⅰ</button><output id="time-label">0.00 / 0.00 s</output></div><div class="playback-right"><label class="speed-label" for="speed">Speed</label><select id="speed"><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select><label class="check-label"><input id="ghosts" type="checkbox"> Ghost poses</label></div></div>
+          </div>
+        </div>
+        <aside class="inspector" id="inspector"></aside>
+      </div>
+      <div class="provenance-bar"><span class="reference-badge">REFERENCE DATA</span><p id="provenance-text">Training-set motion is used to demonstrate the viewer. Model outputs are not connected yet.</p></div>
+</template>
+  <noscript>This interactive viewer needs JavaScript enabled.</noscript>
+  <script type="module" src="./src/app.js?v=20260914-6"></script>
+</body>
+</html>

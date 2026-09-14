@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "encoding": "uint16-le",
+  "frames": 150,
+  "fps": 30.0,
+  "verticesPerFrame": 6890,
+  "faceCount": 13776,
+  "vertices": "t2m_human64_41_motionmillion_3b.vertices.bin",
+  "faces": "smpl.faces.bin",
+  "offset": [
+    -0.6179732084274292,
+    -0.2316916584968567,
+    -0.4253869950771332
+  ],
+  "scale": [
+    1.941693586752727e-05,
+    2.096528327373197e-05,
+    1.9283762437996952e-05
+  ],
+  "bounds": {
+    "min": [
+      -0.6179732084274292,
+      -0.2316916584968567,
+      -0.4253869950771332
+    ],
+    "max": [
+      0.6545156836509705,
+      1.142268180847168,
+      0.8383743762969971
+    ]
+  },
+  "quantizationMaxErrorMeters": 1.0482641182113506e-05,
+  "upAxis": "Y",
+  "units": "meters"
+}
