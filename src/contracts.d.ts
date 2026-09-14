@@ -32,6 +32,16 @@ export interface MotionSample {
   fileName?: string;
   numFrames?: number;
   fps?: number;
+  duration?: number;
+  generationSteps?: number;
+  sourceId?: string;
+  captionOnly?: boolean;
+  captionReview?: boolean;
+  editReview?: boolean;
+  editStatic?: boolean;
+  hyMmReview?: boolean;
+  structuralStatic?: boolean;
+  originalPosition?: number;
   prompt: string;
   provenance: string;
   sourceDataset: string;
@@ -41,7 +51,17 @@ export interface MotionSample {
   comparison?: {models: Array<{motion: MotionPath; label: string; fileName: string;
     fps: number; numFrames: number; seed: number | null; checkpoint: string | null}>};
   predictedCaption: string | null;
+  motiongpt3Caption?: string;
   structures: Partial<Record<Protocol, StructuralResult>>;
+  structuralPair?: {
+    withText: MotionPath;
+    withoutText: MotionPath;
+    knownMask: boolean[];
+    knownRatio: number;
+    sourceId: string;
+    label?: string;
+    knownLabel?: string;
+  };
   edit: EditResult | null;
   checkpoint: string | null;
   seed: number | null;

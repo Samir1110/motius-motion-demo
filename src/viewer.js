@@ -19,6 +19,7 @@ export class MotionViewer {
     this.controls.maxPolarAngle = Math.PI * .49;
     this.controls.minDistance = .5;
     this.tracks = []; this.mode = 'single'; this.ghosts = []; this.mask = null;
+    this.maskColors = {known: COLORS.known, generated: COLORS.generated};
     this.onlyKnown = false; this.seconds = 0; this.preset = 'perspective';
     this.scenes = [this.makeScene(), this.makeScene()];
     this.resizeObserver = new ResizeObserver(() => this.resize());
@@ -136,7 +137,11 @@ export class MotionViewer {
     this.camera.position.copy(target).addScaledVector(direction.normalize(), distance);
     this.controls.target.copy(target); this.controls.maxDistance = Math.max(30, distance * 3); this.controls.update();
   }
-  setMask(mask, onlyKnown = false) { this.mask = mask; this.onlyKnown = onlyKnown; this.setTime(this.seconds); }
+  setMask(mask, onlyKnown = false, colors = null) {
+    this.mask = mask; this.onlyKnown = onlyKnown;
+    this.maskColors = colors ?? {known: COLORS.known, generated: COLORS.generated};
+    this.setTime(this.seconds);
+  }
   setTime(seconds) {
     this.seconds = seconds;
     for (const track of this.tracks) {
@@ -148,7 +153,7 @@ export class MotionViewer {
       }
       const known = this.mask?.[frame] ?? true;
       track.mesh.visible = track.enabled !== false && (!this.onlyKnown || known);
-      if (this.mask) track.mesh.material.color.setHex(known ? COLORS.known : COLORS.generated);
+      if (this.mask) track.mesh.material.color.setHex(known ? this.maskColors.known : this.maskColors.generated);
     }
   }
   clearGhosts() {
@@ -169,6 +174,28 @@ export class MotionViewer {
       const mesh = new THREE.Mesh(geometry, new THREE.MeshStandardMaterial({color: track.mesh.material.color, roughness: .9, transparent: true, opacity: .13, depthWrite: false}));
       mesh.position.copy(track.mesh.position); mesh.userData.trackIndex = track.index; this.scenes[0].add(mesh); this.ghosts.push(mesh);
     }
+    }
+  }
+  setKeyframeAnchors(mask) {
+    this.clearGhosts();
+    if (!mask || !this.tracks.length) return;
+    const frames = mask.flatMap((known, frame) => known ? [frame] : []);
+    for (const track of this.tracks) {
+      for (const frame of frames) {
+        if (frame >= track.motion.meta.frames) continue;
+        const geometry = new THREE.BufferGeometry();
+        geometry.setIndex(new THREE.BufferAttribute(track.motion.faces, 1));
+        geometry.setAttribute('position', new THREE.BufferAttribute(
+          track.motion.decode(frame, new Float32Array(track.motion.meta.verticesPerFrame * 3)), 3));
+        geometry.computeVertexNormals();
+        const material = new THREE.MeshStandardMaterial({
+          color: COLORS.generated, roughness: .9, transparent: true, opacity: .18, depthWrite: false,
+        });
+        const mesh = new THREE.Mesh(geometry, material);
+        mesh.position.copy(track.mesh.position); mesh.userData.trackIndex = track.index;
+        this.scenes[track.index && this.mode === 'split' ? 1 : 0].add(mesh);
+        this.ghosts.push(mesh);
+      }
     }
   }
   render() {
