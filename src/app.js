@@ -226,15 +226,13 @@ export function createStudio(root, task, catalog) {
         const sourceNumber = sample.hyMmReview ? ` ${String(sample.originalPosition).padStart(2, '0')}` : '';
         $('#stage-title').textContent = `${sample.structuralPair.label ?? 'Continuation'}${sourceNumber} · ${ratio}% ${(sample.structuralPair.knownLabel ?? 'known prefix').toLowerCase()}`;
         $('#stage-tag').textContent = sample.structuralProtocol === 'keyframe' ? 'ORANGE: FIXED KEYFRAMES · BLUE: MOTION' : 'ORANGE: KNOWN · BLUE: GENERATED';
-        $('.reference-badge').textContent = sample.hyMmReview ? 'HY_MM REVIEW' : 'LOCAL COMPARISON';
-        $('#provenance-text').textContent = `With source text ↔ Without source text · ${sample.hyMmReview ? 'HY_MM postprocessing · ' : ''}${primary.meta.frames} frames at ${primary.meta.fps} fps · Shared time and camera`;
+        root.querySelector('.provenance-bar').hidden = true;
       }
       if (task === 'edit' && sample.editReview) {
         const displayNumber = sample.originalPosition ?? samples.findIndex(item => item.id === sample.id) + 1;
         $('#stage-title').textContent = `Edit ${String(displayNumber).padStart(2, '0')} · Motion edit`;
         $('#stage-tag').textContent = 'SOURCE ↔ EDITED RESULT';
-        $('.reference-badge').textContent = sample.editStatic ? 'SELECTED RESULT' : 'LOCAL COMPARISON';
-        $('#provenance-text').textContent = `Source motion ↔ HY-smoothed edited result · ${primary.meta.frames} frames at ${primary.meta.fps} fps · Shared time and camera`;
+        root.querySelector('.provenance-bar').hidden = true;
       }
       applyMask(); seek(0); renderInspector(); setStatus('');
       // Deliberately start paused: the user controls playback and reduced-motion preferences are respected.

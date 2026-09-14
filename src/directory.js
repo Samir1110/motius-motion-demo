@@ -1,4 +1,4 @@
-import {createStudio} from './app.js?v=20260914-19';
+import {createStudio} from './app.js?v=20260914-20';
 import {pairCatalogs} from './comparison.js?v=20260914-4';
 
 const status = document.querySelector('#directory-status');
