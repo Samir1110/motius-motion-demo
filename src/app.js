@@ -1,5 +1,5 @@
 import {loadCatalog, loadMotion, protocols, illustrationMask, validateMask, maskSegments} from './data.js?v=20260914-4';
-import {MotionViewer} from './viewer.js?v=20260914-5';
+import {MotionViewer} from './viewer.js?v=20260914-6';
 
 const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const controllers = new Map();
@@ -73,6 +73,7 @@ export function createStudio(root, task, catalog) {
       const next = sample.comparison.models.map((_, itemIndex) => itemIndex === index ? event.target.checked : state.visibleModels[itemIndex] !== false);
       if (!next.some(Boolean)) { event.target.checked = true; return; }
       state.visibleModels = next;
+      if (next[index] && !state.motions[index]) { selectSample(sample); return; }
       viewer?.setTrackVisible(index, next[index]);
       if (!state.loading) viewer?.setGhosts($('#ghosts').checked);
       seek(state.seconds); renderInspector();
@@ -166,13 +167,13 @@ export function createStudio(root, task, catalog) {
       if (task === 'structure' && sample.structuralPair) primaryPath = sample.structuralPair.withText;
       else if (task === 'structure' && structural?.output) primaryPath = structural.output;
       if (task === 'edit' && sample.edit?.source) primaryPath = sample.edit.source;
-      const motionPaths = sample.comparison ? sample.comparison.models.map(model => model.motion)
+      const motionPaths = sample.comparison ? sample.comparison.models.map((model, index) => state.visibleModels[index] !== false ? model.motion : null)
         : sample.structuralPair ? [sample.structuralPair.withText, sample.structuralPair.withoutText]
         : [primaryPath, task === 'edit' && sample.edit?.output ? sample.edit.output : null];
       const loaded = await Promise.all(motionPaths.map(path => path ? loadMotion(path) : null));
       if (request !== state.request) return;
-      const [primary, edited] = loaded;
-      state.motion = primary; state.secondary = edited; state.motions = loaded.filter(Boolean); state.duration = Math.max(...state.motions.map(motion => motion.duration));
+      const primary = sample.comparison ? loaded.find(Boolean) : loaded[0], edited = sample.comparison ? null : loaded[1];
+      state.motion = primary; state.secondary = edited; state.motions = loaded; state.duration = Math.max(...loaded.filter(Boolean).map(motion => motion.duration));
       if (task === 'structure') {
         state.illustrative = !sample.structuralPair && !structural?.output;
         const suppliedMask = sample.structuralPair?.knownMask ?? structural?.knownMask;
@@ -203,7 +204,7 @@ export function createStudio(root, task, catalog) {
           $('#stage-title').textContent = `${sample.fileName} · Model comparison`;
           const colorNames = ['BLUE', 'ORANGE', 'PURPLE'];
           $('#stage-tag').textContent = sample.comparison.models.map((model, index) => `${String.fromCharCode(65 + index)}: ${colorNames[index]}`).join(' · ');
-          $('#provenance-text').textContent = `${sample.comparison.models.map((model, index) => { const motion = state.motions[index]; return `${String.fromCharCode(65 + index)}: ${model.label} · ${motion.meta.frames} frames at ${motion.meta.fps} fps`; }).join(' | ')}. Shared seconds; no duration normalization.`;
+          $('#provenance-text').textContent = `${sample.comparison.models.flatMap((model, index) => { const motion = state.motions[index]; return motion ? [`${String.fromCharCode(65 + index)}: ${model.label} · ${motion.meta.frames} frames at ${motion.meta.fps} fps`] : []; }).join(' | ')}. Shared seconds; no duration normalization.`;
         }
       }
       if (sample.comparison && !catalog.directoryPreview) {
@@ -212,7 +213,7 @@ export function createStudio(root, task, catalog) {
         $('#stage-title').textContent = `Example ${exampleNumber} · Model comparison`;
         $('#stage-tag').textContent = sample.comparison.models.map((model, index) => `${String.fromCharCode(65 + index)}: ${colorNames[index]}`).join(' · ');
         $('.reference-badge').textContent = 'PRECOMPUTED COMPARISON';
-        $('#provenance-text').textContent = sample.comparison.models.map((model, index) => { const motion = state.motions[index]; return `${String.fromCharCode(65 + index)}: ${model.label} · ${motion.meta.frames} frames at ${motion.meta.fps} fps`; }).join(' | ');
+        $('#provenance-text').textContent = sample.comparison.models.flatMap((model, index) => { const motion = state.motions[index]; return motion ? [`${String.fromCharCode(65 + index)}: ${model.label} · ${motion.meta.frames} frames at ${motion.meta.fps} fps`] : []; }).join(' | ');
       }
       if (task === 'm2t' && sample.captionReview) {
         const exampleNumber = String(samples.findIndex(item => item.id === sample.id) + 1).padStart(2, '0');

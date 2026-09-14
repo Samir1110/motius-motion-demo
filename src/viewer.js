@@ -89,8 +89,10 @@ export class MotionViewer {
     this.setView(this.preset);
   }
   setSeparation(gap) {
-    if (this.mode !== 'comparison' || this.tracks.length < 2) return;
+    if (this.mode !== 'comparison' || !this.tracks.length) return;
+    this.separation = gap;
     const floor = Math.min(...this.tracks.map(track => track.motion.meta.offset[1]));
+    const visible = this.tracks.filter(track => track.enabled !== false);
     for (const track of this.tracks) {
       if (!track.startCenter) {
         const first = track.motion.decode(0, new Float32Array(track.motion.meta.verticesPerFrame * 3));
@@ -98,11 +100,15 @@ export class MotionViewer {
         track.startCenter = box.getCenter(new THREE.Vector3());
       }
       // A single translation of the whole clip: retain every subsequent displacement.
-      const centerIndex = (this.tracks.length - 1) / 2;
-      track.mesh.position.set((track.index - centerIndex) * gap - track.startCenter.x, -floor, -track.startCenter.z);
+      const visibleIndex = visible.indexOf(track);
+      const positionIndex = visibleIndex < 0 ? 0 : visibleIndex - (visible.length - 1) / 2;
+      track.mesh.position.set(positionIndex * gap - track.startCenter.x, -floor, -track.startCenter.z);
     }
     this.updateComparisonBounds();
-    for (const ghost of this.ghosts) ghost.position.copy(this.tracks[ghost.userData.trackIndex].mesh.position);
+    for (const ghost of this.ghosts) {
+      const track = this.tracks.find(item => item.index === ghost.userData.trackIndex);
+      if (track) ghost.position.copy(track.mesh.position);
+    }
     this.setView(this.preset);
   }
   updateComparisonBounds() {
@@ -118,9 +124,10 @@ export class MotionViewer {
     this.subjectHeight = upper.y - lower.y;
   }
   setTrackVisible(index, visible) {
-    const track = this.tracks[index];
+    const track = this.tracks.find(item => item.index === index);
     if (!track) return;
     track.enabled = visible;
+    if (this.mode === 'comparison') this.setSeparation(this.separation ?? 3);
     this.setTime(this.seconds);
     for (const ghost of this.ghosts) if (ghost.userData.trackIndex === index) ghost.visible = visible;
     if (this.mode === 'comparison' && this.tracks.some(item => item.enabled !== false)) {
