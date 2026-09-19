@@ -144,7 +144,7 @@ export function createStudio(root, task, catalog) {
     state.editMode = 'split'; state.mask = null; state.motion = null; state.motions = []; state.illustrative = false;
     root.querySelector('.provenance-bar').hidden = false;
     if (sample.comparison && state.visibleModels.length !== sample.comparison.models.length)
-      state.visibleModels = sample.comparison.models.map((_, index) => task === 't2m' ? index === 0 : true);
+      state.visibleModels = sample.comparison.models.map((_, index) => task === 't2m' && !catalog.directoryPreview ? index === 0 : true);
     setPlaying(false); setStatus(catalog.directoryPreview ? 'Loading motion… The first preview converts this file to a mesh.' : 'Loading motion…');
     ['play', 'step-back', 'step-forward', 'scrubber'].forEach(id => $(`#${id}`).disabled = true);
     renderPager(); renderInspector();
@@ -168,7 +168,7 @@ export function createStudio(root, task, catalog) {
       else if (task === 'structure' && structural?.output) primaryPath = structural.output;
       if (task === 'edit' && sample.edit?.source) primaryPath = sample.edit.source;
       const motionPaths = sample.comparison ? sample.comparison.models.map((model, index) => state.visibleModels[index] !== false ? model.motion : null)
-        : sample.structuralPair ? [sample.structuralPair.withText, sample.structuralPair.withoutText]
+        : sample.structuralPair ? [sample.structuralPair.withText, sample.structuralPair.single ? null : sample.structuralPair.withoutText]
         : [primaryPath, task === 'edit' && sample.edit?.output ? sample.edit.output : null];
       const loaded = await Promise.all(motionPaths.map(path => path ? loadMotion(path) : null));
       if (request !== state.request) return;
@@ -179,14 +179,14 @@ export function createStudio(root, task, catalog) {
         const suppliedMask = sample.structuralPair?.knownMask ?? structural?.knownMask;
         state.mask = state.illustrative ? illustrationMask(state.protocol, primary.meta.frames) : validateMask(suppliedMask, primary.meta.frames);
       }
-      viewer.setTracks(sample.comparison ? state.motions : task === 'edit' || sample.structuralPair ? [primary, edited] : [primary], sample.comparison ? 'comparison' : task === 'edit' || sample.structuralPair ? 'split' : 'single');
+      viewer.setTracks(sample.comparison ? state.motions : task === 'edit' || sample.structuralPair ? [primary, edited].filter(Boolean) : [primary], sample.comparison ? 'comparison' : task === 'edit' || (sample.structuralPair && !sample.structuralPair.single) ? 'split' : 'single');
       if (sample.comparison) state.visibleModels.forEach((visible, index) => viewer.setTrackVisible(index, visible));
       if (sample.comparison && !setViewerSeparation(state.separation ?? 3)) return;
       root.querySelectorAll('[data-camera]').forEach(button => button.setAttribute('aria-pressed', button.dataset.camera === viewer.preset));
       state.loading = false;
       $('#scrubber').max = state.duration;
       ['play', 'step-back', 'step-forward', 'scrubber'].forEach(id => $(`#${id}`).disabled = false);
-      $('#split-source').hidden = task !== 'edit' && !sample.structuralPair; $('#split-source').textContent = sample.structuralPair ? 'WITH SOURCE TEXT' : 'Source';
+      $('#split-source').hidden = (task !== 'edit' && !sample.structuralPair) || sample.structuralPair?.single; $('#split-source').textContent = sample.structuralPair ? 'WITH SOURCE TEXT' : 'Source';
       $('#split-output').hidden = (task !== 'edit' && !sample.structuralPair) || !edited;
       $('#split-output').textContent = sample.structuralPair ? 'WITHOUT SOURCE TEXT' : 'Edited';
       $('#edit-empty').hidden = task !== 'edit' || !!edited;
