@@ -2,23 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>MOTIVE — Frame-Level Unified Motion Understanding and Generation</title>
-  <meta name="description" content="Explore motion generation, understanding, structural completion and editing in an interactive 3D viewer with selected three-model text-to-motion comparisons.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2318202d'/%3E%3Cpath d='M6 23V9l10 10L26 9v14' fill='none' stroke='%23ff8a4c' stroke-width='3'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="./src/styles.css?v=20260914-9">
+  <title>MÖBIUS — Unified Model for Bidirectional Motion Understanding and Synthesis</title>
+  <meta name="description" content="MÖBIUS is a unified model for bidirectional human motion understanding and synthesis.">
+  <link rel="icon" href="./assets/Mobius.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./src/styles.css?v=20260919-mobius">
   <script type="importmap">{"imports":{"three":"./vendor/three/three.module.js"}}</script>
 </head>
 <body>
-  <header class="site-header"><a class="wordmark" href="#top"><span class="logo">m</span> MOTIVE</a><nav class="section-nav" aria-label="Motion tasks"><a href="#t2m">Text to Motion</a><a href="#m2t">Motion to Text</a><a href="#structure">Temporal Inpainting</a><a href="#edit">Edit</a><a href="#benchmark">Benchmark</a></nav></header>
+  <header class="site-header"><a class="wordmark" href="#top"><img class="logo" src="./assets/Mobius.svg" alt=""> MÖBIUS</a><nav class="section-nav" aria-label="Motion tasks"><a href="#t2m">Text to Motion</a><a href="#m2t">Motion to Text</a><a href="#structure">Temporal Inpainting</a><a href="#edit">Edit</a><a href="#benchmark">Benchmark</a></nav></header>
   <main>
     <section class="intro" id="top">
-      <h1>MOTIVE: FRAME-LEVEL UNIFIED MOTION<br>UNDERSTANDING AND GENERATION</h1>
-      <figure class="pipeline-figure"><img src="./assets/pipeline.webp" width="4769" height="2317" alt="MOTIVE pipeline for unified motion understanding and generation"></figure>
+      <h1>MÖBIUS: UNIFIED MODEL FOR BIDIRECTIONAL<br>MOTION UNDERSTANDING AND SYNTHESIS</h1>
+      <figure class="teaser-figure"><img src="./assets/teaser3.png" alt="Overview of MÖBIUS motion understanding and synthesis capabilities"></figure>
     </section>
-    <section class="task-section" id="t2m" aria-labelledby="t2m-heading"><div class="task-heading"><div><p class="eyebrow">01 / GENERATION</p><h2 id="t2m-heading">Text-to-Motion</h2><p>We compare our Motius (1.7B) with HY-Motion 1B and MotionMillion 3B on manually written OOD prompts.</p></div><span class="section-chip">15 precomputed comparisons</span></div><div class="studio" data-task="t2m"></div></section>
-    <section class="task-section" id="m2t" aria-labelledby="m2t-heading"><div class="task-heading"><div><p class="eyebrow">02 / UNDERSTANDING</p><h2 id="m2t-heading">Motion-to-Text</h2><p>We compare our Motius (1.7B) with MotionGPT3 on our internal test datasets.</p></div><span class="section-chip">8 selected samples</span></div><div class="studio" data-task="m2t"></div></section>
-    <section class="task-section" id="structure" aria-labelledby="structure-heading"><div class="task-heading"><div><p class="eyebrow">03 / TEMPORAL INPAINTING</p><h2 id="structure-heading">Temporal Inpainting</h2><p>We evaluate Motius (0.6B) on the HumanML3D test set.</p></div><span class="section-chip">4 tasks · 12 selected</span></div><div class="studio" data-task="structure"></div></section>
-    <section class="task-section" id="edit" aria-labelledby="edit-heading"><div class="task-heading"><div><p class="eyebrow">04 / INSTRUCTION EDITING</p><h2 id="edit-heading">Motion Editing</h2><p>We evaluate Motius (0.6B) on the MotionFix test set.</p></div><span class="section-chip">5 selected samples</span></div><div class="studio" data-task="edit"></div></section>
+    <section class="task-section" id="t2m" aria-labelledby="t2m-heading"><div class="task-heading"><div><p class="eyebrow">01 / GENERATION</p><h2 id="t2m-heading">Text-to-Motion</h2><p>We compare our MÖBIUS (1.7B) with HY-Motion 1B and MotionMillion 3B on manually written OOD prompts.</p></div><span class="section-chip">15 precomputed comparisons</span></div><div class="studio" data-task="t2m"></div></section>
+    <section class="task-section" id="m2t" aria-labelledby="m2t-heading"><div class="task-heading"><div><p class="eyebrow">02 / UNDERSTANDING</p><h2 id="m2t-heading">Motion-to-Text</h2><p>We compare our MÖBIUS (1.7B) with MotionGPT3 on our internal test datasets.</p></div><span class="section-chip">8 selected samples</span></div><div class="studio" data-task="m2t"></div></section>
+    <section class="task-section" id="structure" aria-labelledby="structure-heading"><div class="task-heading"><div><p class="eyebrow">03 / TEMPORAL INPAINTING</p><h2 id="structure-heading">Temporal Inpainting</h2><p>We evaluate MÖBIUS (0.6B) on the HumanML3D test set.</p></div><span class="section-chip">4 tasks · 32 selected</span></div><div class="studio" data-task="structure"></div></section>
+    <section class="task-section" id="edit" aria-labelledby="edit-heading"><div class="task-heading"><div><p class="eyebrow">04 / INSTRUCTION EDITING</p><h2 id="edit-heading">Motion Editing</h2><p>We evaluate MÖBIUS (0.6B) on the MotionFix test set.</p></div><span class="section-chip">5 selected samples</span></div><div class="studio" data-task="edit"></div></section>
+    <section class="pipeline-section" aria-label="MÖBIUS pipeline"><figure class="pipeline-figure"><img src="./assets/pipeline.png" alt="MÖBIUS unified motion understanding and synthesis pipeline"></figure></section>
     <section class="benchmark-section" id="benchmark" aria-labelledby="benchmark-heading">
       <div class="benchmark-heading"><p class="eyebrow">QUANTITATIVE RESULTS</p><h2 id="benchmark-heading">Benchmark</h2><p>Results on the HumanML3D test set.</p></div>
 
@@ -37,10 +38,6 @@
               <tr><th>MotionStreamer</th><td>0.6303</td><td>0.7865</td><td>0.8498</td><td class="second">12.2110</td><td>16.5810</td><td class="second">27.4637</td></tr>
               <tr><th>PRISM</th><td class="second">0.7463</td><td class="second">0.8832</td><td class="second">0.9241</td><td>19.0359</td><td class="second">15.5135</td><td>27.4151</td></tr>
               <tr class="ours"><th>Ours (0.6B)</th><td class="best">0.8209</td><td class="best">0.9397</td><td class="best">0.9670</td><td class="best">6.1291</td><td class="best">13.9973</td><td class="best">27.6107</td></tr>
-              <tr class="group-row"><th colspan="7">Train on large-scale datasets</th></tr>
-              <tr><th>Go to Zero (3B)</th><td>0.7401</td><td>0.8772</td><td>0.9229</td><td class="best">3.0658</td><td>15.3806</td><td class="second">27.5604</td></tr>
-              <tr><th>HY-Motion (1B)</th><td class="best">0.7899</td><td class="best">0.9177</td><td class="best">0.9516</td><td>13.5194</td><td class="best">14.7748</td><td class="best">27.6694</td></tr>
-              <tr class="ours"><th>Ours (1.7B)</th><td class="second">0.7530</td><td class="second">0.8941</td><td class="second">0.9420</td><td class="second">12.6642</td><td class="second">15.1146</td><td>27.3649</td></tr>
             </tbody>
           </table>
         </div>
@@ -59,14 +56,13 @@
               <tr><th>MotionGPT3</th><td>0.5383</td><td>0.1605</td><td>0.4165</td><td>0.4077</td><td>0.3425</td><td>0.5333</td><td>0.7178</td><td>0.8043</td><td>2.8533</td></tr>
               <tr><th>UniMuMo</th><td>0.4488</td><td>0.1271</td><td>0.3560</td><td>0.3114</td><td>0.4517</td><td>0.5162</td><td>0.7032</td><td>0.7984</td><td>2.9658</td></tr>
               <tr class="ours"><th>Ours 0.6B (ML3D only)</th><td class="second">0.5664</td><td class="second">0.2032</td><td class="second">0.4636</td><td class="second">0.5754</td><td class="second">0.4541</td><td class="second">0.6056</td><td class="second">0.7936</td><td class="second">0.8761</td><td class="second">2.4693</td></tr>
-              <tr class="ours"><th>Ours 1.7B (large-scale)</th><td class="best">0.5874</td><td class="best">0.2105</td><td class="best">0.4725</td><td class="best">0.5836</td><td class="best">0.4657</td><td class="best">0.6152</td><td class="best">0.8086</td><td class="best">0.8862</td><td class="best">2.4143</td></tr>
             </tbody>
           </table>
         </div>
         <p class="benchmark-note"><strong>Bold</strong> and <span class="second">underline</span> indicate the best and second-best model scores.</p>
       </article>
     </section>
-    <footer><span>Motion Studio <span class="footer-divider">/</span> Interactive research demo</span><span>Precomputed motion · Interactive 3D</span></footer>
+    <footer><span>MÖBIUS <span class="footer-divider">/</span> Interactive research demo</span><span>Precomputed motion · Interactive 3D</span></footer>
   </main>
   <template id="viewer-template"><div class="case-nav"><div><span class="case-eyebrow">EXAMPLE</span><span id="case-count">01 / 08</span></div><div class="case-controls"><button id="previous-case" aria-label="Previous example">←</button><label class="sr-only" for="case-select">Choose example</label><select id="case-select"></select><button id="next-case" aria-label="Next example">→</button></div></div>      <div class="studio-body">
         <div class="viewer-column">
@@ -91,6 +87,6 @@
       <div class="provenance-bar"><span class="reference-badge">REFERENCE DATA</span><p id="provenance-text">Training-set motion is used to demonstrate the viewer. Model outputs are not connected yet.</p></div>
 </template>
   <noscript>This interactive viewer needs JavaScript enabled.</noscript>
-  <script type="module" src="./src/app.js?v=20260919-21"></script>
+  <script type="module" src="./src/app.js?v=20260919-22"></script>
 </body>
 </html>
