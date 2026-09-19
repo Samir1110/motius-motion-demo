@@ -144,7 +144,7 @@ export function createStudio(root, task, catalog) {
     state.editMode = 'split'; state.mask = null; state.motion = null; state.motions = []; state.illustrative = false;
     root.querySelector('.provenance-bar').hidden = false;
     if (sample.comparison && state.visibleModels.length !== sample.comparison.models.length)
-      state.visibleModels = sample.comparison.models.map((_, index) => task === 't2m' && !catalog.directoryPreview ? index === 0 : true);
+      state.visibleModels = sample.comparison.models.map((_, index) => task === 't2m' && !catalog.directoryPreview ? index < 2 : true);
     setPlaying(false); setStatus(catalog.directoryPreview ? 'Loading motion… The first preview converts this file to a mesh.' : 'Loading motion…');
     ['play', 'step-back', 'step-forward', 'scrubber'].forEach(id => $(`#${id}`).disabled = true);
     renderPager(); renderInspector();
