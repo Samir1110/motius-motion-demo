@@ -7222,6 +7222,276 @@
       "fps": 30,
       "selectedStructural": true,
       "structuralStatic": true
+    },
+    {
+      "id": "t2m_human_all_005",
+      "label": "Human · 005",
+      "prompt": "Walk half a step forward, put the left hand to the mouth for a kiss and then extend it forward making a heart gesture, then return to the idle pose",
+      "provenance": "model-generated",
+      "sourceDataset": "t2m_human_all prompt set",
+      "reference": null,
+      "generated": "assets/t2m_human_all_005_ours.json",
+      "comparison": {
+        "models": [
+          {
+            "motion": "assets/t2m_human_all_005_ours.json",
+            "label": "Ours",
+            "fileName": "motion_272/004.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 46,
+            "checkpoint": "/local-ssd/ckpts/omni_1.7b_hymotion201_ieg_copy28k_ema_gen_only/stage2/0110000"
+          },
+          {
+            "motion": "assets/t2m_human_all_005_hy_1b.json",
+            "label": "HY 1B",
+            "fileName": "motion_272/004.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 46,
+            "checkpoint": "HY 1B"
+          },
+          {
+            "motion": "assets/t2m_human_all_005_motionmillion_3b.json",
+            "label": "MotionMillion 3B",
+            "fileName": "motion_272/004.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 46,
+            "checkpoint": "MotionMillion 3B"
+          }
+        ]
+      },
+      "predictedCaption": null,
+      "edit": null,
+      "structures": {},
+      "checkpoint": "Ours · stage2 / 110000",
+      "seed": 46,
+      "sourceIndex": 4,
+      "selection": "t2m_human_all browser case 5/1250",
+      "generation": {
+        "weights": "ema.safetensors",
+        "mode": "direct_t2m_hymotion201",
+        "num_timesteps": 50,
+        "guidance_scale": 3.0,
+        "fps": 30.0
+      }
+    },
+    {
+      "id": "t2m_human_all_079",
+      "label": "Human · 079",
+      "prompt": "Jumping up and slamming both hands down to the ground",
+      "provenance": "model-generated",
+      "sourceDataset": "t2m_human_all prompt set",
+      "reference": null,
+      "generated": "assets/t2m_human_all_079_ours.json",
+      "comparison": {
+        "models": [
+          {
+            "motion": "assets/t2m_human_all_079_ours.json",
+            "label": "Ours",
+            "fileName": "motion_272/078.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 120,
+            "checkpoint": "/local-ssd/ckpts/omni_1.7b_hymotion201_ieg_copy28k_ema_gen_only/stage2/0110000"
+          },
+          {
+            "motion": "assets/t2m_human_all_079_hy_1b.json",
+            "label": "HY 1B",
+            "fileName": "motion_272/078.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 120,
+            "checkpoint": "HY 1B"
+          },
+          {
+            "motion": "assets/t2m_human_all_079_motionmillion_3b.json",
+            "label": "MotionMillion 3B",
+            "fileName": "motion_272/078.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 120,
+            "checkpoint": "MotionMillion 3B"
+          }
+        ]
+      },
+      "predictedCaption": null,
+      "edit": null,
+      "structures": {},
+      "checkpoint": "Ours · stage2 / 110000",
+      "seed": 120,
+      "sourceIndex": 78,
+      "selection": "t2m_human_all browser case 79/1250",
+      "generation": {
+        "weights": "ema.safetensors",
+        "mode": "direct_t2m_hymotion201",
+        "num_timesteps": 50,
+        "guidance_scale": 3.0,
+        "fps": 30.0
+      }
+    },
+    {
+      "id": "t2m_human_all_145",
+      "label": "Human · 145",
+      "prompt": "Generate a character animation of a person standing on one foot and waving hello with the left hand, requiring a cartoonish style",
+      "provenance": "model-generated",
+      "sourceDataset": "t2m_human_all prompt set",
+      "reference": null,
+      "generated": "assets/t2m_human_all_145_ours.json",
+      "comparison": {
+        "models": [
+          {
+            "motion": "assets/t2m_human_all_145_ours.json",
+            "label": "Ours",
+            "fileName": "motion_272/144.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 186,
+            "checkpoint": "/local-ssd/ckpts/omni_1.7b_hymotion201_ieg_copy28k_ema_gen_only/stage2/0110000"
+          },
+          {
+            "motion": "assets/t2m_human_all_145_hy_1b.json",
+            "label": "HY 1B",
+            "fileName": "motion_272/144.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 186,
+            "checkpoint": "HY 1B"
+          },
+          {
+            "motion": "assets/t2m_human_all_145_motionmillion_3b.json",
+            "label": "MotionMillion 3B",
+            "fileName": "motion_272/144.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 186,
+            "checkpoint": "MotionMillion 3B"
+          }
+        ]
+      },
+      "predictedCaption": null,
+      "edit": null,
+      "structures": {},
+      "checkpoint": "Ours · stage2 / 110000",
+      "seed": 186,
+      "sourceIndex": 144,
+      "selection": "t2m_human_all browser case 145/1250",
+      "generation": {
+        "weights": "ema.safetensors",
+        "mode": "direct_t2m_hymotion201",
+        "num_timesteps": 50,
+        "guidance_scale": 3.0,
+        "fps": 30.0
+      }
+    },
+    {
+      "id": "t2m_human_all_224",
+      "label": "Human · 224",
+      "prompt": "The character leans backward.",
+      "provenance": "model-generated",
+      "sourceDataset": "t2m_human_all prompt set",
+      "reference": null,
+      "generated": "assets/t2m_human_all_224_ours.json",
+      "comparison": {
+        "models": [
+          {
+            "motion": "assets/t2m_human_all_224_ours.json",
+            "label": "Ours",
+            "fileName": "motion_272/223.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 265,
+            "checkpoint": "/local-ssd/ckpts/omni_1.7b_hymotion201_ieg_copy28k_ema_gen_only/stage2/0110000"
+          },
+          {
+            "motion": "assets/t2m_human_all_224_hy_1b.json",
+            "label": "HY 1B",
+            "fileName": "motion_272/223.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 265,
+            "checkpoint": "HY 1B"
+          },
+          {
+            "motion": "assets/t2m_human_all_224_motionmillion_3b.json",
+            "label": "MotionMillion 3B",
+            "fileName": "motion_272/223.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 265,
+            "checkpoint": "MotionMillion 3B"
+          }
+        ]
+      },
+      "predictedCaption": null,
+      "edit": null,
+      "structures": {},
+      "checkpoint": "Ours · stage2 / 110000",
+      "seed": 265,
+      "sourceIndex": 223,
+      "selection": "t2m_human_all browser case 224/1250",
+      "generation": {
+        "weights": "ema.safetensors",
+        "mode": "direct_t2m_hymotion201",
+        "num_timesteps": 50,
+        "guidance_scale": 3.0,
+        "fps": 30.0
+      }
+    },
+    {
+      "id": "t2m_human_all_249",
+      "label": "Human · 249",
+      "prompt": "Seeing the things that scare and frighten them.",
+      "provenance": "model-generated",
+      "sourceDataset": "t2m_human_all prompt set",
+      "reference": null,
+      "generated": "assets/t2m_human_all_249_ours.json",
+      "comparison": {
+        "models": [
+          {
+            "motion": "assets/t2m_human_all_249_ours.json",
+            "label": "Ours",
+            "fileName": "motion_272/248.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 290,
+            "checkpoint": "/local-ssd/ckpts/omni_1.7b_hymotion201_ieg_copy28k_ema_gen_only/stage2/0110000"
+          },
+          {
+            "motion": "assets/t2m_human_all_249_hy_1b.json",
+            "label": "HY 1B",
+            "fileName": "motion_272/248.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 290,
+            "checkpoint": "HY 1B"
+          },
+          {
+            "motion": "assets/t2m_human_all_249_motionmillion_3b.json",
+            "label": "MotionMillion 3B",
+            "fileName": "motion_272/248.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 290,
+            "checkpoint": "MotionMillion 3B"
+          }
+        ]
+      },
+      "predictedCaption": null,
+      "edit": null,
+      "structures": {},
+      "checkpoint": "Ours · stage2 / 110000",
+      "seed": 290,
+      "sourceIndex": 248,
+      "selection": "t2m_human_all browser case 249/1250",
+      "generation": {
+        "weights": "ema.safetensors",
+        "mode": "direct_t2m_hymotion201",
+        "num_timesteps": 50,
+        "guidance_scale": 3.0,
+        "fps": 30.0
+      }
     }
   ],
   "tasks": {
@@ -7235,7 +7505,12 @@
       "t2m_short_03",
       "t2m_short_04",
       "t2m_short_05",
-      "t2m_long_05"
+      "t2m_long_05",
+      "t2m_human_all_005",
+      "t2m_human_all_079",
+      "t2m_human_all_145",
+      "t2m_human_all_224",
+      "t2m_human_all_249"
     ],
     "m2t": [
       "m2t_review_01",
