@@ -11802,6 +11802,11 @@
   ],
   "tasks": {
     "t2m": [
+      "t2m_human_all_006",
+      "t2m_human_all_079",
+      "t2m_human_all_145",
+      "t2m_human_all_224",
+      "t2m_human_all_249",
       "t2m_human64_01",
       "t2m_human64_07",
       "t2m_human64_24",
@@ -11811,13 +11816,7 @@
       "t2m_short_03",
       "t2m_short_04",
       "t2m_short_05",
-      "t2m_long_05",
-      "t2m_human_all_005",
-      "t2m_human_all_006",
-      "t2m_human_all_079",
-      "t2m_human_all_145",
-      "t2m_human_all_224",
-      "t2m_human_all_249"
+      "t2m_long_05"
     ],
     "m2t": [
       "m2t_review_01",
