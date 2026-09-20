@@ -11496,12 +11496,12 @@
           },
           {
             "motion": "assets/t2m_human_all_005_hy_1b.json",
-            "label": "HY 1B",
+            "label": "HY-Motion 1B",
             "fileName": "motion_272/004.npy",
             "fps": 30.0,
             "numFrames": 150,
             "seed": 46,
-            "checkpoint": "HY 1B"
+            "checkpoint": "HY-Motion 1B"
           },
           {
             "motion": "assets/t2m_human_all_005_motionmillion_3b.json",
@@ -11521,6 +11521,60 @@
       "seed": 46,
       "sourceIndex": 4,
       "selection": "t2m_human_all browser case 5/1250",
+      "generation": {
+        "weights": "ema.safetensors",
+        "mode": "direct_t2m_hymotion201",
+        "num_timesteps": 50,
+        "guidance_scale": 3.0,
+        "fps": 30.0
+      }
+    },
+    {
+      "id": "t2m_human_all_006",
+      "label": "Human · 006",
+      "prompt": "Squat down to build power then jump up spin and bring the right hand down in a chopping attack",
+      "provenance": "model-generated",
+      "sourceDataset": "t2m_human_all prompt set",
+      "reference": null,
+      "generated": "assets/t2m_human_all_006_ours.json",
+      "comparison": {
+        "models": [
+          {
+            "motion": "assets/t2m_human_all_006_ours.json",
+            "label": "Ours",
+            "fileName": "motion_272/005.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 47,
+            "checkpoint": "/local-ssd/ckpts/omni_1.7b_hymotion201_ieg_copy28k_ema_gen_only/stage2/0110000"
+          },
+          {
+            "motion": "assets/t2m_human_all_006_hy_1b.json",
+            "label": "HY-Motion 1B",
+            "fileName": "motion_272/005.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 47,
+            "checkpoint": "HY-Motion 1B"
+          },
+          {
+            "motion": "assets/t2m_human_all_006_motionmillion_3b.json",
+            "label": "MotionMillion 3B",
+            "fileName": "motion_272/005.npy",
+            "fps": 30.0,
+            "numFrames": 150,
+            "seed": 47,
+            "checkpoint": "MotionMillion 3B"
+          }
+        ]
+      },
+      "predictedCaption": null,
+      "edit": null,
+      "structures": {},
+      "checkpoint": "Ours · stage2 / 110000",
+      "seed": 47,
+      "sourceIndex": 5,
+      "selection": "t2m_human_all browser case 6/1250",
       "generation": {
         "weights": "ema.safetensors",
         "mode": "direct_t2m_hymotion201",
@@ -11550,12 +11604,12 @@
           },
           {
             "motion": "assets/t2m_human_all_079_hy_1b.json",
-            "label": "HY 1B",
+            "label": "HY-Motion 1B",
             "fileName": "motion_272/078.npy",
             "fps": 30.0,
             "numFrames": 150,
             "seed": 120,
-            "checkpoint": "HY 1B"
+            "checkpoint": "HY-Motion 1B"
           },
           {
             "motion": "assets/t2m_human_all_079_motionmillion_3b.json",
@@ -11604,12 +11658,12 @@
           },
           {
             "motion": "assets/t2m_human_all_145_hy_1b.json",
-            "label": "HY 1B",
+            "label": "HY-Motion 1B",
             "fileName": "motion_272/144.npy",
             "fps": 30.0,
             "numFrames": 150,
             "seed": 186,
-            "checkpoint": "HY 1B"
+            "checkpoint": "HY-Motion 1B"
           },
           {
             "motion": "assets/t2m_human_all_145_motionmillion_3b.json",
@@ -11658,12 +11712,12 @@
           },
           {
             "motion": "assets/t2m_human_all_224_hy_1b.json",
-            "label": "HY 1B",
+            "label": "HY-Motion 1B",
             "fileName": "motion_272/223.npy",
             "fps": 30.0,
             "numFrames": 150,
             "seed": 265,
-            "checkpoint": "HY 1B"
+            "checkpoint": "HY-Motion 1B"
           },
           {
             "motion": "assets/t2m_human_all_224_motionmillion_3b.json",
@@ -11712,12 +11766,12 @@
           },
           {
             "motion": "assets/t2m_human_all_249_hy_1b.json",
-            "label": "HY 1B",
+            "label": "HY-Motion 1B",
             "fileName": "motion_272/248.npy",
             "fps": 30.0,
             "numFrames": 150,
             "seed": 290,
-            "checkpoint": "HY 1B"
+            "checkpoint": "HY-Motion 1B"
           },
           {
             "motion": "assets/t2m_human_all_249_motionmillion_3b.json",
@@ -11759,6 +11813,7 @@
       "t2m_short_05",
       "t2m_long_05",
       "t2m_human_all_005",
+      "t2m_human_all_006",
       "t2m_human_all_079",
       "t2m_human_all_145",
       "t2m_human_all_224",
