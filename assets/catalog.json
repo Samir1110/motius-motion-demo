@@ -758,7 +758,31 @@
       "numFrames": 120,
       "fps": 30,
       "originalPosition": 2,
-      "editStatic": true
+      "editStatic": true,
+      "comparison": {
+        "models": [
+          {
+            "label": "Source",
+            "motion": "assets/edit_01_source.json",
+            "color": "#8593a4"
+          },
+          {
+            "label": "MotionFix",
+            "motion": "assets/edit_005121_motionfix.json",
+            "color": "#d6ad20"
+          },
+          {
+            "label": "MotionLab",
+            "motion": "assets/edit_005121_motionlab.json",
+            "color": "#9563d4"
+          },
+          {
+            "label": "MÖBIUS (Ours)",
+            "motion": "assets/edit_01_result.json",
+            "color": "#3275d1"
+          }
+        ]
+      }
     },
     {
       "id": "edit_review_05",
@@ -784,7 +808,31 @@
       "numFrames": 90,
       "fps": 30,
       "originalPosition": 5,
-      "editStatic": true
+      "editStatic": true,
+      "comparison": {
+        "models": [
+          {
+            "label": "Source",
+            "motion": "assets/edit_02_source.json",
+            "color": "#8593a4"
+          },
+          {
+            "label": "MotionFix",
+            "motion": "assets/edit_006131_motionfix.json",
+            "color": "#d6ad20"
+          },
+          {
+            "label": "MotionLab",
+            "motion": "assets/edit_006131_motionlab.json",
+            "color": "#9563d4"
+          },
+          {
+            "label": "MÖBIUS (Ours)",
+            "motion": "assets/edit_02_result.json",
+            "color": "#3275d1"
+          }
+        ]
+      }
     },
     {
       "id": "edit_review_08",
@@ -810,7 +858,31 @@
       "numFrames": 120,
       "fps": 30,
       "originalPosition": 8,
-      "editStatic": true
+      "editStatic": true,
+      "comparison": {
+        "models": [
+          {
+            "label": "Source",
+            "motion": "assets/edit_03_source.json",
+            "color": "#8593a4"
+          },
+          {
+            "label": "MotionFix",
+            "motion": "assets/edit_007018_motionfix.json",
+            "color": "#d6ad20"
+          },
+          {
+            "label": "MotionLab",
+            "motion": "assets/edit_007018_motionlab.json",
+            "color": "#9563d4"
+          },
+          {
+            "label": "MÖBIUS (Ours)",
+            "motion": "assets/edit_03_result.json",
+            "color": "#3275d1"
+          }
+        ]
+      }
     },
     {
       "id": "edit_review_14",
@@ -836,7 +908,31 @@
       "numFrames": 90,
       "fps": 30,
       "originalPosition": 14,
-      "editStatic": true
+      "editStatic": true,
+      "comparison": {
+        "models": [
+          {
+            "label": "Source",
+            "motion": "assets/edit_04_source.json",
+            "color": "#8593a4"
+          },
+          {
+            "label": "MotionFix",
+            "motion": "assets/edit_006418_motionfix.json",
+            "color": "#d6ad20"
+          },
+          {
+            "label": "MotionLab",
+            "motion": "assets/edit_006418_motionlab.json",
+            "color": "#9563d4"
+          },
+          {
+            "label": "MÖBIUS (Ours)",
+            "motion": "assets/edit_04_result.json",
+            "color": "#3275d1"
+          }
+        ]
+      }
     },
     {
       "id": "edit_review_18",
@@ -862,7 +958,31 @@
       "numFrames": 120,
       "fps": 30,
       "originalPosition": 18,
-      "editStatic": true
+      "editStatic": true,
+      "comparison": {
+        "models": [
+          {
+            "label": "Source",
+            "motion": "assets/edit_05_source.json",
+            "color": "#8593a4"
+          },
+          {
+            "label": "MotionFix",
+            "motion": "assets/edit_004205_motionfix.json",
+            "color": "#d6ad20"
+          },
+          {
+            "label": "MotionLab",
+            "motion": "assets/edit_004205_motionlab.json",
+            "color": "#9563d4"
+          },
+          {
+            "label": "MÖBIUS (Ours)",
+            "motion": "assets/edit_05_result.json",
+            "color": "#3275d1"
+          }
+        ]
+      }
     },
     {
       "id": "struct_110k_continuation_003",
@@ -11866,8 +11986,8 @@
       "edit_review_02",
       "edit_review_05",
       "edit_review_08",
-      "edit_review_14",
-      "edit_review_18"
+      "edit_review_18",
+      "edit_review_14"
     ]
   }
 }

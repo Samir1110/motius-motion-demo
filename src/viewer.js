@@ -88,6 +88,9 @@ export class MotionViewer {
     }
     this.setView(this.preset);
   }
+  setTrackColors(colors) {
+    for (const track of this.tracks) if (colors[track.index]) track.mesh.material.color.set(colors[track.index]);
+  }
   setSeparation(gap) {
     if (this.mode !== 'comparison' || !this.tracks.length) return;
     this.separation = gap;
