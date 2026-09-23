@@ -21,6 +21,7 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}
 .comparison-legend{display:flex;flex-direction:column;align-items:flex-start;gap:11px;font-size:15px}.comparison-legend label{display:flex;align-items:center;gap:7px;cursor:pointer}.comparison-legend input{width:15px;height:15px;margin:0;flex:none}.comparison-legend .model-a{color:#2864b6}.comparison-legend .model-b{color:#a64e15}.comparison-legend .model-c{color:#6941c6}.comparison-legend .model-a input{accent-color:#3275d1}.comparison-legend .model-b input{accent-color:#e9823f}.comparison-legend .model-c input{accent-color:#8b5cf6}[id$='-separation']{width:100%;accent-color:#3275d1}
 .reference-caption{border-left-color:#d8dee7;color:#687383}
 .motius-result .eyebrow,.motius-caption{color:#3275d1}.motius-caption{border-left-color:#3275d1}
+.fixed-condition-result .eyebrow,.fixed-condition-caption{color:#00a7a0}.fixed-condition-caption{border-left-color:#00a7a0}
 .motiongpt-result .eyebrow,.motiongpt-caption{color:#e9823f}.motiongpt-caption{border-left-color:#e9823f}
 .reference-result .eyebrow{color:#8793a1}.caption-result+.caption-result{margin-top:20px}
 .pair-legend{display:flex;flex-wrap:wrap;gap:16px;margin:18px 0 8px;color:#687383;font-size:13px}
